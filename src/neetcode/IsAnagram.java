@@ -22,7 +22,7 @@ public class IsAnagram {
 
     public static void main(String[] args) {
         IsAnagram isAnagram = new IsAnagram();
-        System.out.println(isAnagram.isAnagram("jar", "jam"));
+        System.out.println(isAnagram.isAnagram("jar", "raj"));
     }
 
 }
