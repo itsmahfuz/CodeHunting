@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.LinkedHashMap;
+
 public class FirstDuplicateChar {
 
     public static char findDup() {
@@ -19,6 +21,26 @@ public class FirstDuplicateChar {
 
             if (count > 1) {
                 break;
+            }
+        }
+
+        return value;
+    }
+
+    public static char findDupByMap() {
+        String str = "leetcode";
+        char value = 0;
+        LinkedHashMap<Character, Integer> mapValue = new LinkedHashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            if (mapValue.containsKey(str.charAt(i))) {
+                mapValue.replace(str.charAt(i), mapValue.get(str.charAt(i)) + 1);
+            } else mapValue.put(str.charAt(i), 1);
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            if (mapValue.get(str.charAt(i)) > 1) {
+                value = str.charAt(i);
             }
         }
 
