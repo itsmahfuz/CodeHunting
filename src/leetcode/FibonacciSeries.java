@@ -32,19 +32,18 @@ public class FibonacciSeries {
         list.add(1);
         int sum = 0;
 
-        for (int i = 1; i < list.size(); i++) {
+        for (int i = 1; i < n; i++) {
             sum = list.get(i - 1) + list.get(i);
             list.add(sum);
 
-            if (n == i + 1) break;
         }
 
         return list;
     }
 
     public static void main(String[] args) {
-        int result = fib(3);
-        System.out.println(result);
+//        int result = fib(3);
+//        System.out.println(result);
         System.out.println(fibSeries(10));
     }
 
