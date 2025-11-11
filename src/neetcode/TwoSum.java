@@ -1,37 +1,36 @@
 package neetcode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
-/**
- * @author Mahfuzur Rahman
- * @Date 10/7/2024
- */
 public class TwoSum {
 
-
-    List<Integer> list = new ArrayList<>();
-
     public int[] twoSum(int[] nums, int target) {
-        int[] indexes = new int[2];
+
+        int[] result = new int[2];
 
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    indexes[0] = i;
-                    indexes[1] = j;
 
+            int iVal = nums[i];
+
+            for (int j = 0; j < nums.length; j++) {
+                int jVal = nums[j];
+
+                if (iVal + jVal == target) {
+                    result[0] = j;
+                    result[1] = i;
                     break;
                 }
             }
         }
-        return indexes;
+
+        return result;
+
     }
 
     public static void main(String[] args) {
         TwoSum ts = new TwoSum();
-        System.out.println(Arrays.toString(ts.twoSum(new int[]{3, 4, 5, 6}, 7)));
+        int[] nums = {3, 4, 5, 6};
+        int target = 7;
+        System.out.println(Arrays.toString(ts.twoSum(nums, target)));
     }
-
 }
